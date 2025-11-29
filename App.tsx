@@ -1,20 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// App.tsx
+import 'react-native-gesture-handler'; // Import obrigatório para Navegadores
+
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+
+// Importe o seu Navegador principal
+import AppNavegador from './navegacao/AppNavegador';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    // O NavigationContainer deve envolver toda a navegação
+    <NavigationContainer>
+      {/* O AppNavegador contém o Auth Stack e o Main Tab Navigator */}
+      <AppNavegador />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
